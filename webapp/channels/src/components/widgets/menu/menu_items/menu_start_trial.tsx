@@ -50,8 +50,8 @@ const MenuStartTrial = (props: Props): JSX.Element | null => {
             role='menuitem'
             id={props.id}
         >
-            <FreeVersionBadge>{'FREE EDITION'}</FreeVersionBadge>
-            <div className='editionText'>
+            {/* <FreeVersionBadge>{'FREE EDITION'}</FreeVersionBadge> */}
+            {/* <div className='editionText'>
                 {formatMessage(
                     {
                         id: 'navbar_dropdown.versionText',
@@ -68,7 +68,7 @@ const MenuStartTrial = (props: Props): JSX.Element | null => {
                         ),
                     },
                 )}
-            </div>
+            </div> */}
         </li>
     );
 };

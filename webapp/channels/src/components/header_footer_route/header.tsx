@@ -25,33 +25,21 @@ const Header = ({alternateLink, backButtonURL, onBackButtonClick}: HeaderProps) 
 
     const ariaLabel = SiteName || 'Mattermost';
 
-    let freeBanner = null;
-    if (license.IsLicensed === 'false') {
-        freeBanner = <><Logo/><span className='freeBadge'>{'FREE EDITION'}</span></>;
-    }
+    // let freeBanner = null;
+    // if (license.IsLicensed === 'false') {
+    //     freeBanner = <><Logo/><span className='freeBadge'>{'Chat'}</span></>;
+    // }
 
     let title: React.ReactNode = SiteName;
     if (title === 'Mattermost') {
-        if (freeBanner) {
-            title = '';
-        } else {
-            title = <Logo/>;
-        }
+        title = <Logo/>;
     }
 
     return (
-        <div className={classNames('hfroute-header', {'has-free-banner': freeBanner, 'has-custom-site-name': title})}>
+        <div className={classNames('hfroute-header', {'has-custom-site-name': title})}>
             <div className='header-main'>
                 <div>
-                    {freeBanner &&
-                        <Link
-                            className='header-logo-link'
-                            to='/'
-                            aria-label={ariaLabel}
-                        >
-                            {freeBanner}
-                        </Link>
-                    }
+
                     {title &&
                         <Link
                             className='header-logo-link'
